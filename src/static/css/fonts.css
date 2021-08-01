@@ -1,0 +1,14 @@
+@font-face {
+  font-family: NikeTG;
+  src: url(../fonts/TradeGothic/NikeTG.eot),
+    url(../fonts/TradeGothic/NikeTG.eot?#iefix) format("embedded-opentype"),
+    url(../fonts/TradeGothic/NikeTG.svg) format("svg"),
+    url(../fonts/TradeGothic/NikeTG.ttf) format("truetype"),
+    url(../fonts/TradeGothic/NikeTG.woff) format("woff"),
+    url(../fonts/TradeGothic/NikeTG.woff2) format("woff2");
+  font-display: swap;
+}
+
+.snkr-release__date {
+  font-family: NikeTG, HelveticaNeue, Helvetica, Arial, sans-serif;
+}
