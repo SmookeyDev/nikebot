@@ -9,16 +9,21 @@ import Bottombar from './components/bottombar';
 import Settings from './pages/settings';
 import buyData from './pages/buydata';
 import Calendar from './pages/calendar';
+import Stock from './pages/stock';
+import { AnimatePresence } from "framer-motion";
 
 function App() {
   return (
-    <div>
-      <div className="min-h-screen bg-gray-200">
-        <Switch>
-          <Route path="/calendar" component={Calendar}/>
-          <Route path="/buydata" component={buyData}/>
-          <Route path="/settings" component={Settings}/>
-        </Switch>
+    <div className="min-h-screen bg-gray-200">
+      <div>
+        <AnimatePresence>
+          <Switch>
+            <Route path="/calendar" component={Calendar}/>
+            <Route path="/stock" component={Stock}/>
+            <Route path="/buydata" component={buyData}/>
+            <Route path="/settings" component={Settings}/>
+          </Switch>
+        </AnimatePresence>
       </div>
       <Bottombar/>
     </div>

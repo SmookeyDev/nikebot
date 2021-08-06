@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { CalendarIcon, CreditCardIcon, CogIcon } from "@heroicons/react/outline";
+import { CalendarIcon, CreditCardIcon, CogIcon, TruckIcon } from "@heroicons/react/outline";
 
 function Bottombar() {
   return (
@@ -8,6 +8,10 @@ function Bottombar() {
       <NavLink to="/calendar" exact className="w-full block py-5 px-3 text-center hover:bg-gray-100 hover:text-blue-800">
         <CalendarIcon className="w-8 h-8 mb-2 mx-auto"/>
         Calendário
+      </NavLink>
+      <NavLink to="/stock" exact className="w-full block py-5 px-3 text-center hover:bg-gray-100 hover:text-blue-800">
+        <TruckIcon className="w-8 h-8 mb-2 mx-auto"/>
+        Estoque
       </NavLink>
       <NavLink to="/buydata" className="w-full block py-5 px-3 text-center hover:bg-gray-100 hover:text-blue-800">
         <CreditCardIcon className="w-8 h-8 mb-2 mx-auto"/>
