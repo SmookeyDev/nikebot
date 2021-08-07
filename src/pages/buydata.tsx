@@ -15,14 +15,16 @@ function buyData() {
             <div className="p-6 w-full md:w-3/5">
                 <div className="p-10 rounded-md shadow-md bg-white">
                     <h4 className="text-3xl text-gray-700 mb-5">Informação de Pagamentos</h4>
-                    <div className="mb-6">
-                        <label className="block mb-3 text-gray-600">Nome no cartão</label>
-                        <input type="text" value="" className="border border-gray-500 rounded-md inline-block py-2 px-3 w-full text-gray-600 tracking-wider" disabled/>
-                    </div>
-                    <div className="mb-6">
-                        <label className="block mb-3 text-gray-600">Número do cartão</label>
-                        <input
-                            type="tel" className="border border-gray-500 rounded-md inline-block py-2 px-3 w-full text-gray-600 tracking-widest" disabled/>
+                    <div className="mb-6 flex flex-wrap -mx-3w-full">
+                        <div className="mb-6 w-2/4 px-3">
+                            <label className="block mb-3 text-gray-600">Nome no cartão</label>
+                            <input type="text" value="" className="border border-gray-500 rounded-md inline-block py-2 px-3 w-full text-gray-600 tracking-wider" disabled />
+                        </div>
+                        <div className="mb-6 w-2/4">
+                            <label className="block mb-3 text-gray-600">Número do cartão</label>
+                            <input
+                                type="tel" className="border border-gray-500 rounded-md inline-block py-2 px-3 w-full text-gray-600 tracking-widest" disabled />
+                        </div>
                     </div>
                     <div className="mb-6 flex flex-wrap -mx-3w-full">
                         <div className="w-2/3 px-3">
@@ -38,18 +40,18 @@ function buyData() {
                         </div>
                         <div className="w-1/3 px-3">
                             <label className="block mb-3 text-gray-600">CVV</label>
-                            <input type="tel" className="border border-gray-500 rounded-md inline-block py-2 px-3 w-full text-gray-600 tracking-widest" disabled/>
+                            <input type="tel" className="border border-gray-500 rounded-md inline-block py-2 px-3 w-full text-gray-600 tracking-widest" disabled />
                         </div>
                     </div>
                     <h4 className="text-3xl text-gray-700 mb-5">Endereço de entrega</h4>
                     <div className="mb-6">
                         <label className="block mb-3 text-gray-600">Nome no cartão</label>
-                        <input type="text" value="" className="border border-gray-500 rounded-md inline-block py-2 px-3 w-full text-gray-600 tracking-wider" disabled/>
+                        <input type="text" value="" className="border border-gray-500 rounded-md inline-block py-2 px-3 w-full text-gray-600 tracking-wider" disabled />
                     </div>
                     <div className="mb-6">
                         <label className="block mb-3 text-gray-600">Número do cartão</label>
                         <input
-                            type="tel" className="border border-gray-500 rounded-md inline-block py-2 px-3 w-full text-gray-600 tracking-widest" disabled/>
+                            type="tel" className="border border-gray-500 rounded-md inline-block py-2 px-3 w-full text-gray-600 tracking-widest" disabled />
                     </div>
                     <div className="mb-6 flex flex-wrap -mx-3w-full">
                         <div className="w-2/3 px-3">
@@ -65,7 +67,7 @@ function buyData() {
                         </div>
                         <div className="w-1/3 px-3">
                             <label className="block mb-3 text-gray-600">CEP</label>
-                            <input type="tel" className="border border-gray-500 rounded-md inline-block py-2 px-3 w-full text-gray-600 tracking-widest" disabled/>
+                            <input type="tel" className="border border-gray-500 rounded-md inline-block py-2 px-3 w-full text-gray-600 tracking-widest" disabled />
                         </div>
                     </div>
                 </div>

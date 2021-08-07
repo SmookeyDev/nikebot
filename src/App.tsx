@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 
 import "primereact/resources/themes/saga-blue/theme.css"
 import "primereact/resources/primereact.min.css"
@@ -18,6 +18,7 @@ function App() {
       <div>
         <AnimatePresence>
           <Switch>
+            <Redirect exact from="/" to="/calendar"/>
             <Route path="/calendar" component={Calendar}/>
             <Route path="/stock" component={Stock}/>
             <Route path="/buydata" component={buyData}/>

@@ -1,9 +1,7 @@
 import { InputText } from "primereact/inputtext";
 import { InputTextarea } from "primereact/inputtextarea";
-import { Password } from "primereact/password";
 import { motion } from "framer-motion";
 import { pageVariants, pageTransition } from "../components/transition";
-
 
 function Settings() {
   return (
@@ -29,7 +27,7 @@ function Settings() {
               type="tel" className="border border-gray-900 rounded-md inline-block py-2 px-3 w-full text-gray-900 tracking-wider" />
           </div>
           <div className="mb-6 flex flex-wrap -mx-3w-full">
-            <div className="w-2/3 px-3">
+            <div className="w-2/3">
               <label className="block mb-3 text-gray-900">Lista de proxys</label>
               <InputTextarea className="mt-2 py-2 px-4" rows={5} cols={30} />
             </div>
