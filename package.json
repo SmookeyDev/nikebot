@@ -7,6 +7,7 @@
   "main": "build/electron/main.js",
   "private": true,
   "dependencies": {
+    "@headlessui/react": "^1.4.0",
     "@heroicons/react": "^1.0.3",
     "@testing-library/jest-dom": "^5.12.0",
     "@testing-library/react": "^11.2.7",

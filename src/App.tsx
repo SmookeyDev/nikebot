@@ -12,6 +12,7 @@ import Calendar from './pages/calendar';
 import Stock from './pages/stock';
 import { AnimatePresence } from "framer-motion";
 
+
 function App() {
   return (
     <div className="min-h-screen bg-gray-200">
