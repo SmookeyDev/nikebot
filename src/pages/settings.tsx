@@ -24,7 +24,12 @@ function Settings() {
           <div className="mb-6">
             <label className="block mb-3 text-gray-600">Senha</label>
             <InputText
-              type="tel" className="border border-gray-900 rounded-md inline-block py-2 px-3 w-full text-gray-900 tracking-wider" />
+              type="text" className="border border-gray-900 rounded-md inline-block py-2 px-3 w-full text-gray-900 tracking-wider" />
+          </div>
+          <div className="mb-6">
+            <label className="block mb-3 text-gray-600">Número de celular</label>
+            <InputText
+              type="text" className="border border-gray-900 rounded-md inline-block py-2 px-3 w-full text-gray-900 tracking-wider" />
           </div>
           <div className="mb-6 flex flex-wrap -mx-3w-full">
             <div className="w-full">
