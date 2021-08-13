@@ -33,7 +33,7 @@ function Settings() {
           </div>
           <div className="mb-6 flex flex-wrap -mx-3w-full">
             <div className="w-full">
-              <label className="block mb-3 text-gray-900">Lista de proxys</label>
+              <label className="block mb-3 text-gray-600">Lista de proxys</label>
               <InputTextarea className="w-full h-64" rows={5} cols={30} />
             </div>
           </div>
