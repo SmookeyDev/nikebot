@@ -1,26 +1,30 @@
 import { ipcMain as ipc } from "electron";
+import Accounts from "./Accounts";
+
 
 export default function () {
     ipc.on("get-accounts", (event) => {
-        event.returnValue = [];
+        event.returnValue = Accounts.getAccounts();
     });
+
+    ipc.on("add-account", (event, account) => {
+        Accounts.addAccount(account);
+        event.returnValue = true;
+    });
+
+    ipc.on("edit-account", (event, name, account) => {
+        event.returnValue = Accounts.editAccount(name, account);
+    });
+
+    ipc.on("remove-account", (event, name) => {
+        event.returnValue = Accounts.removeAccount(name);
+    });
+
     ipc.on("get-products-calendar", (event) => {
         event.returnValue = [];
     });
     ipc.on("get-products-stock", (event) => {
         event.returnValue = [];
-    });
-
-    ipc.on("add-account", (event) => {
-        event.returnValue = false;
-    });
-
-    ipc.on("edit-account", (event) => {
-        event.returnValue = false;
-    });
-
-    ipc.on("remove-account", (event) => {
-        event.returnValue = false;
     });
 
     ipc.on("schedule-product", (event) => {
@@ -31,7 +35,7 @@ export default function () {
         event.returnValue = false;
     });
 
-    ipc.on("schedules-products", (event) => {
+    ipc.on("get-schedules-products", (event) => {
         event.returnValue = false;
     });
 
