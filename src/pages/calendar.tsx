@@ -5,6 +5,7 @@ import moment from "moment";
 import { pageVariants, pageTransition } from "../components/transition";
 import "../static/css/fonts.css";
 
+
 const Modal = ({ isOpen, closeModal, productName }) => {
   return (
     <Dialog
@@ -65,6 +66,7 @@ function Calendar() {
     >
       
       <div className="pb-28 min-h-screen relative">
+      
         <div className="min-w-screen animated fadeIn faster left-0 top-0 grid grid-cols-3 place-items-center items-center inset-0">
           <Card
             productId="195244308736"
@@ -120,6 +122,7 @@ function Calendar() {
             image="https://images.lojanike.com.br/500x500/produto/tenis-air-jordan-1-retro-high-og-infantil-575441-701-1-11627399126.jpg"
             release_date="2021-08-07T13:00:00.000Z"
           />
+          
         </div>
       </div>
     </motion.div>

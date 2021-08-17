@@ -1,12 +1,13 @@
 {
   "name": "nike-bot",
-  "version": "1.0",
+  "version": "1.0.0",
   "author": "Your Name",
   "description": "React-TypeScript-Electron sample with Create React App and Electron Builder",
   "homepage": ".",
   "main": "build/electron/main.js",
   "private": true,
   "dependencies": {
+    "@headlessui/react": "^1.4.0",
     "@heroicons/react": "^1.0.3",
     "@testing-library/jest-dom": "^5.12.0",
     "@testing-library/react": "^11.2.7",
