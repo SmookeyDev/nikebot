@@ -2,6 +2,7 @@ import { app, BrowserWindow } from 'electron';
 import * as path from 'path';
 import * as isDev from 'electron-is-dev';
 import installExtension, { REACT_DEVELOPER_TOOLS } from "electron-devtools-installer";
+import ipcTasks from './ipcTasks';
 
 function createWindow() {
   const win = new BrowserWindow({
@@ -47,6 +48,7 @@ app.whenReady().then(() => {
     .catch((err) => console.log('An error occurred: ', err));
 
   createWindow();
+  ipcTasks();
 
   app.on('activate', () => {
     if (BrowserWindow.getAllWindows().length === 0) {
