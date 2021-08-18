@@ -1,5 +1,6 @@
-import { ipcRenderer as ipc } from "electron";
+import type { IpcRenderer } from "electron";
 
+const ipc = window.require("electron").ipcRenderer as IpcRenderer;
 
 export interface IAccount {
     name: string;

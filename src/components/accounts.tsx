@@ -22,7 +22,7 @@ const Accounts = ({ isOpen, closeModal }) => {
 			<div className="flex flex-col items-center">
 				{accounts.length != 0 && accounts.map((account) => <span>{account.name}</span>)}
 
-				{account && (
+				{/* {account && (
 					<InputText
 						type="text"
 						className="border border-gray-900 rounded-md inline-block py-2 px-3 w-full text-gray-900 tracking-wider"
@@ -45,7 +45,7 @@ const Accounts = ({ isOpen, closeModal }) => {
 							Criar conta
 						</button>
 					)}
-				</div>
+				</div> */}
 			</div>
 		</Dialog>
 	);
