@@ -33,7 +33,12 @@ const Accounts = ({ isOpen, closeModal }) => {
 		>
 			<div className="flex flex-col items-center">
 				<div>
-				{accounts.length != 0 && accounts.map((account) => <li>{account.name}</li>)}
+				{accounts.length != 0 && accounts.map((account) => 
+				<div className="">
+					<RadioButton inputId={account.name} name="accounts" value={account.name} onChange={(e) => selectAccount(e.value)} checked={selectedAccount === account.name}/>
+					<label htmlFor={account.name}>{account.name}</label>
+				</div>
+				)}
 				</div>
 
 				{useButton && (

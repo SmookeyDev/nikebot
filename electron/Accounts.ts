@@ -13,6 +13,11 @@ export class Accounts {
         return db.get("accounts") as IAccount[] || [];
     }
 
+    getAccount(name: string) {
+        let accounts = this.getAccounts();
+        return accounts.filter(account => account.name === name);
+    }
+
     addAccount(account: IAccount) {
         let accounts = this.getAccounts();
         accounts.push(account);

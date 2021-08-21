@@ -23,6 +23,10 @@ class CommunicationIpc {
         return ipc.sendSync("get-accounts");
     }
 
+    getAccount(accountName: string): IAccount[] {
+        return ipc.sendSync("get-account", accountName);
+    }
+
     addAccount(account: IAccount): boolean {
         return ipc.sendSync("add-account", account);
     }
@@ -34,11 +38,11 @@ class CommunicationIpc {
     removeAccount(accountName: string): boolean {
         return ipc.sendSync("remove-account", accountName);
     }
-
+    
     setActiveAccount(accountName: string): boolean {
         return ipc.sendSync("set-active-account", accountName);
     }
-    
+
     getActiveAccount(accountName: string): boolean {
         return ipc.sendSync("get-active-account", accountName);
     }

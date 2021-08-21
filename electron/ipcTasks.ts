@@ -7,6 +7,10 @@ export default function () {
         event.returnValue = Accounts.getAccounts();
     });
 
+    ipc.on("get-account", (event, name) => {
+        event.returnValue = Accounts.getAccount(name);
+    });
+
     ipc.on("add-account", (event, account) => {
         Accounts.addAccount(account);
         event.returnValue = true;
@@ -19,6 +23,9 @@ export default function () {
     ipc.on("remove-account", (event, name) => {
         event.returnValue = Accounts.removeAccount(name);
     });
+
+
+    
 
     ipc.on("get-products-calendar", (event) => {
         event.returnValue = [];
