@@ -1,4 +1,4 @@
 
 import JSONdb = require('simple-json-db');
 
-export default new JSONdb("/config.json");
+export default new JSONdb("./config.json");

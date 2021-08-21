@@ -6,11 +6,23 @@ import CommunicationIPC, { IAccount } from "../lib/CommunicationIPC";
 import { useEffect } from "react";
 
 const Accounts = ({ isOpen, closeModal }) => {
+	const ipc = CommunicationIPC
 	const [accounts, setAccounts] = useState<IAccount[]>([]);
+	const [useButton, createButton] = useState(false);
+	const [getAccountName, setAccountName] = useState('')
+	const TAccount: IAccount = {
+		name: getAccountName,
+		email: '',
+		password: '',
+		proxys: []
+	}
+
 
 	useEffect(() => {
 		setAccounts(CommunicationIPC.getAccounts());
 	}, []);
+
+
 
 	return (
 		<Dialog
@@ -20,32 +32,19 @@ const Accounts = ({ isOpen, closeModal }) => {
 			onHide={closeModal}
 		>
 			<div className="flex flex-col items-center">
-				{accounts.length != 0 && accounts.map((account) => <span>{account.name}</span>)}
+				<div>
+				{accounts.length != 0 && accounts.map((account) => <li>{account.name}</li>)}
+				</div>
 
-				{/* {account && (
-					<InputText
-						type="text"
-						className="border border-gray-900 rounded-md inline-block py-2 px-3 w-full text-gray-900 tracking-wider"
-						placeholder="Nome da conta"
-						onChange={(e) => localStorage.setItem("newAccount", e.target.value)}
-					/>
+				{useButton && (
+					<InputText type="text" className="border border-gray-900 rounded-md inline-block py-2 px-3 w-full text-gray-900 tracking-wider" placeholder="Nome da conta" onChange={(e) => setAccountName(e.target.value)}/>
 				)}
 				<div className="flex flex-row w-full justify-center py-3">
-					<button
-						className="transition ease-in duration-300  items-center text-sm font-medium mb-2 md:mb-0 bg-blue-900 px-5 py-3 w-1/3 hover:shadow-lg tracking-wider text-white rounded-full hover:border-blue-800"
-						onClick={() => (account == false ? createAccount(true) : createAccount(false))}
-					>
-						Nova conta
-					</button>
-					{account && (
-						<button
-							className="transition ease-in duration-300  items-center text-sm font-medium mb-2 md:mb-0 bg-blue-900 px-5 py-3 w-1/3 hover:shadow-lg tracking-wider text-white rounded-full hover:bg-blue-800"
-							onClick={() => newAccount(localStorage.getItem("newAccount"))}
-						>
-							Criar conta
-						</button>
+					<button className="transition ease-in duration-300  items-center text-sm font-medium mb-2 md:mb-0 bg-blue-900 px-5 py-3 w-1/3 hover:shadow-lg tracking-wider text-white rounded-full hover:border-blue-800" onClick={() => (useButton == false ? createButton(true) : createButton(false))}>Nova conta</button>
+					{useButton && (
+						<button className="transition ease-in duration-300  items-center text-sm font-medium mb-2 md:mb-0 bg-blue-900 px-5 py-3 w-1/3 hover:shadow-lg tracking-wider text-white rounded-full hover:bg-blue-800" onClick={() => ipc.addAccount(TAccount)}>Criar Conta</button>
 					)}
-				</div> */}
+				</div>
 			</div>
 		</Dialog>
 	);

@@ -24,15 +24,23 @@ class CommunicationIpc {
     }
 
     addAccount(account: IAccount): boolean {
-        return ipc.sendSync("add-account");
+        return ipc.sendSync("add-account", account);
     }
 
     editAccount(accountName: string, account: IAccount): boolean {
-        return ipc.sendSync("edit-account");
+        return ipc.sendSync("edit-account", accountName, account);
     }
 
     removeAccount(accountName: string): boolean {
-        return ipc.sendSync("remove-account");
+        return ipc.sendSync("remove-account", accountName);
+    }
+
+    setActiveAccount(accountName: string): boolean {
+        return ipc.sendSync("set-active-account", accountName);
+    }
+    
+    getActiveAccount(accountName: string): boolean {
+        return ipc.sendSync("get-active-account", accountName);
     }
 
     getProductsInCalendar(): IProducts[] {
