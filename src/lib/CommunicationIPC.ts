@@ -9,13 +9,14 @@ export interface IAccount {
     proxys?: string[];
 }
 
-export interface IProducts {
+export interface IProduct {
+    productId: string;
     name: string;
-    productId: string
-    price: number;
-    releaseDate: Date;
+    image: string;
     url: string;
-    img: string;
+    store: string;
+    release_date?: Date | string;
+    scheduled?: boolean;
 }
 
 class CommunicationIpc {
@@ -38,7 +39,7 @@ class CommunicationIpc {
     removeAccount(accountName: string): boolean {
         return ipc.sendSync("remove-account", accountName);
     }
-    
+
     setActiveAccount(accountName: string): boolean {
         return ipc.sendSync("set-active-account", accountName);
     }
@@ -47,11 +48,11 @@ class CommunicationIpc {
         return ipc.sendSync("get-active-account", accountName);
     }
 
-    getProductsInCalendar(): IProducts[] {
+    getProductsInCalendar(): IProduct[] {
         return ipc.sendSync("get-products-calendar");
     }
 
-    getProductsInStock(): IProducts[] {
+    getProductsInStock(): IProduct[] {
         return ipc.sendSync("get-products-stock");
     }
 
@@ -63,7 +64,7 @@ class CommunicationIpc {
         return ipc.sendSync("cancel-schedule-product", productId);
     }
 
-    getSchedulesProducts(): IProducts[] {
+    getSchedulesProducts(): IProduct[] {
         return ipc.sendSync("get-schedules-products");
     }
 
