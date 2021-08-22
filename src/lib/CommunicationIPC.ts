@@ -1,8 +1,6 @@
-import type { IpcRenderer } from "electron";
+const ipc = window.require("electron").ipcRenderer;
 
-const ipc = window.require("electron").ipcRenderer as IpcRenderer;
-
-export interface IAccount {
+export interface IProfile {
     name: string;
     email?: string;
     password?: string;
@@ -20,56 +18,56 @@ export interface IProduct {
 }
 
 class CommunicationIpc {
-    getAccounts(): IAccount[] {
-        return ipc.sendSync("get-accounts");
+    getprofiles(): IProfile[] {
+        throw new Error("Obsolete")
     }
 
-    getAccount(accountName: string): IAccount[] {
-        return ipc.sendSync("get-account", accountName);
+    getprofile(profileName: string): IProfile[] {
+        throw new Error("Obsolete")
     }
 
-    addAccount(account: IAccount): boolean {
-        return ipc.sendSync("add-account", account);
+    addprofile(profile: IProfile): boolean {
+        throw new Error("Obsolete")
     }
 
-    editAccount(accountName: string, account: IAccount): boolean {
-        return ipc.sendSync("edit-account", accountName, account);
+    editprofile(profileName: string, profile: IProfile): boolean {
+        throw new Error("Obsolete")
     }
 
-    removeAccount(accountName: string): boolean {
-        return ipc.sendSync("remove-account", accountName);
+    removeprofile(profileName: string): boolean {
+        throw new Error("Obsolete")
     }
 
-    setActiveAccount(accountName: string): boolean {
-        return ipc.sendSync("set-active-account", accountName);
+    setActiveprofile(profileName: string): boolean {
+        throw new Error("Obsolete")
     }
 
-    getActiveAccount(accountName: string): boolean {
-        return ipc.sendSync("get-active-account", accountName);
+    getActiveprofile(profileName: string): boolean {
+        throw new Error("Obsolete")
     }
 
     getProductsInCalendar(): IProduct[] {
-        return ipc.sendSync("get-products-calendar");
+        throw new Error("Obsolete")
     }
 
     getProductsInStock(): IProduct[] {
-        return ipc.sendSync("get-products-stock");
+        throw new Error("Obsolete")
     }
 
     scheduleProduct(productId: string): boolean {
-        return ipc.sendSync("schedule-product");
+        throw new Error("Obsolete")
     }
 
     cancelScheduleProduct(productId: string): boolean {
-        return ipc.sendSync("cancel-schedule-product", productId);
+        throw new Error("Obsolete")
     }
 
     getSchedulesProducts(): IProduct[] {
-        return ipc.sendSync("get-schedules-products");
+        throw new Error("Obsolete")
     }
 
     buyProduct(productId: string): boolean {
-        return ipc.sendSync("buy-product", productId);
+        throw new Error("Obsolete")
     }
 
 }
