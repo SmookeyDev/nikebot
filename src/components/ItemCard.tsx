@@ -59,29 +59,66 @@ const ItemCard: React.FC<{
 	image: string;
 	release_date?: string | Date;
 	scheduled?: boolean;
-}> = ({ productId, name, image, release_date }) => {
+}> = ({ productId, name, image, release_date, scheduled }) => {
 	const [modal, setModal] = useState<boolean>(false);
+
+	const CancelSchedule = () => {
+		alert("todo");
+	};
+
+	const BuyItem = () => {
+		alert("todo");
+	};
+
+	const ScheduleItem = () => {
+		alert("todo");
+	};
+
+	const Button = () => {
+		if (scheduled)
+			return (
+				<button
+					className="transition ease-in duration-300 inline-flex items-center text-sm font-medium mb-2 md:mb-0 bg-blue-900 px-5 py-2 hover:shadow-lg tracking-wider text-white rounded-full hover:bg-blue-800"
+					onClick={CancelSchedule}
+				>
+					Cancelar agendamento
+				</button>
+			);
+
+		if (release_date)
+			return (
+				<button
+					className="transition ease-in duration-300 inline-flex items-center text-sm font-medium mb-2 md:mb-0 bg-blue-900 px-5 py-2 hover:shadow-lg tracking-wider text-white rounded-full hover:bg-blue-800"
+					onClick={ScheduleItem}
+				>
+					<span>Agendar</span>
+				</button>
+			);
+
+		return (
+			<button
+				className="transition ease-in duration-300 inline-flex items-center text-sm font-medium mb-2 md:mb-0 bg-blue-900 px-5 py-2 hover:shadow-lg tracking-wider text-white rounded-full hover:bg-blue-800"
+				onClick={BuyItem}
+			>
+				<span>Comprar</span>
+			</button>
+		);
+	};
+
 	return (
-		<div className="p-6 w-full md:w-4/5">
-			<div className="bg-gray-800 rounded-lg shadow-lg">
-				<div className="relative h-62 w-full mb-3">
-					<div className="absolute flex flex-col left-0 right-0 p-6 snkr-release__date text-black uppercase text-3xl">
-						<div>{moment(release_date).format("MMM")}</div>
-						<div>{moment(release_date).format("DD")}</div>
-					</div>
-					<img src={image} className="w-full object-fill" />
+		<div className="bg-gray-800 rounded-lg shadow-lg w-full h-full">
+			<div className="relative h-62 w-full mb-3">
+				<div className="absolute flex flex-col left-0 right-0 p-6 snkr-release__date text-black uppercase text-3xl">
+					<div>{moment(release_date).format("MMM")}</div>
+					<div>{moment(release_date).format("DD")}</div>
 				</div>
-				<div className="p-6 block">
-					<h2 className="font-bold mb-2 text-2xl sm:text-base text-gray-200 min-w-full">{name}</h2>
-					<div className="flex space-x-2 text-sm font-medium justify-start">
-						<button
-							className="transition ease-in duration-300 inline-flex items-center text-sm font-medium mb-2 md:mb-0 bg-blue-900 px-5 py-2 hover:shadow-lg tracking-wider text-white rounded-full hover:bg-blue-800"
-							onClick={() => setModal(true)}
-						>
-							{release_date ? <span>Agendar</span> : <span>Comprar</span>}
-						</button>
-						<Modal isOpen={modal} closeModal={() => setModal(false)} productName={name} />
-					</div>
+				<img src={image} className="w-full object-fill" />
+			</div>
+			<div className="p-6 block">
+				<h2 className="font-bold mb-2 text-2xl sm:text-base text-gray-200 min-w-full">{name}</h2>
+				<div className="flex space-x-2 text-sm font-medium justify-start">
+					<Button />
+					<Modal isOpen={modal} closeModal={() => setModal(false)} productName={name} />
 				</div>
 			</div>
 		</div>

@@ -3,6 +3,7 @@ import { pageVariants, pageTransition } from "../components/transition";
 import "../static/css/fonts.css";
 import ItemCard from "../components/ItemCard";
 import { IProduct } from "../lib/CommunicationIPC";
+import { ItemsCardContainer } from "../components/ItemsCardContainer";
 
 const products: IProduct[] = [
 	{
@@ -52,19 +53,17 @@ function Calendar() {
 			variants={pageVariants}
 			transition={pageTransition}
 		>
-			<div className="pb-28 min-h-screen relative">
-				<div className="min-w-screen animated fadeIn faster left-0 top-0 grid grid-cols-2 place-items-center items-center inset-0">
-					{products.map((product) => (
-						<ItemCard
-							productId={product.productId}
-							name={product.name}
-							image={product.image}
-							release_date={product.release_date}
-							scheduled={product.scheduled}
-						/>
-					))}
-				</div>
-			</div>
+			<ItemsCardContainer>
+				{products.map((product) => (
+					<ItemCard
+						productId={product.productId}
+						name={product.name}
+						image={product.image}
+						release_date={product.release_date}
+						scheduled={product.scheduled}
+					/>
+				))}
+			</ItemsCardContainer>
 		</motion.div>
 	);
 }

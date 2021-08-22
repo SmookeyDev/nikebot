@@ -1,10 +1,8 @@
-import { useState } from "react";
-import { Dialog } from "primereact/dialog";
 import { motion } from "framer-motion";
-import moment from "moment";
 import { pageVariants, pageTransition } from "../components/transition";
 import "../static/css/fonts.css";
 import ItemCard from "../components/ItemCard";
+import { ItemsCardContainer } from "../components/ItemsCardContainer";
 
 const products = [
 	{
@@ -50,13 +48,11 @@ function Stock() {
 			variants={pageVariants}
 			transition={pageTransition}
 		>
-			<div className="pb-28 min-h-screen relative">
-				<div className="min-w-screen animated fadeIn faster left-0 top-0 grid grid-cols-2 place-items-center items-center inset-0">
-					{products.map((product) => (
-						<ItemCard productId={product.productId} name={product.name} image={product.image} />
-					))}
-				</div>
-			</div>
+			<ItemsCardContainer>
+				{products.map((product) => (
+					<ItemCard productId={product.productId} name={product.name} image={product.image} />
+				))}
+			</ItemsCardContainer>
 		</motion.div>
 	);
 }
