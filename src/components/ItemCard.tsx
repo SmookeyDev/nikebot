@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Dialog } from "primereact/dialog";
 import { motion } from "framer-motion";
 import moment from "moment";
-import { pageVariants, pageTransition } from "../components/transition";
 import "../static/css/fonts.css";
 
 const Modal = ({ isOpen, closeModal, productName }) => {
@@ -73,6 +72,8 @@ const ItemCard: React.FC<{
 	const ScheduleItem = () => {
 		alert("todo");
 	};
+
+
 
 	const Button = () => {
 		if (scheduled)

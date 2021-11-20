@@ -1,4 +1,3 @@
-import { InputText } from "primereact/inputtext";
 import { InputTextarea } from "primereact/inputtextarea";
 import { motion } from "framer-motion";
 import { pageVariants, pageTransition } from "../components/transition";
